@@ -33,7 +33,8 @@ async function upload(token, hook, sourceText, readmeText, directory, filename, 
   /* 업로드 후 커밋 */
   const git = new GitHub(hook, token);
   const stats = await getStats();
-  let default_branch = stats.branches[hook];
+  //let default_branch = stats.branches[hook];
+  let default_branch = "jeongbeen";
   if (isNull(default_branch)) {
     default_branch = await git.getDefaultBranchOnRepo();
     stats.branches[hook] = default_branch;
